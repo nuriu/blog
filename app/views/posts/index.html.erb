@@ -1,1 +1,7 @@
 <h1>Yazılar</h1>
+<%= link_to "Yeni Yazı", new_post_path(@post) %>
+<br><br>
+<% @posts.each do |post| %>
+<h2><%= link_to post.title, post %></h2>
+<p><%= post.created_at.strftime("%B %d, %Y") %></p>
+<% end %>

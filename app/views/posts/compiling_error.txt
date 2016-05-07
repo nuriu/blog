@@ -1,0 +1,3 @@
+/usr/bin/ld:/home/ezhoikam/projeler/rails/blog/app/views/posts/index.html.erb: file format not recognized; treating as linker script
+/usr/bin/ld:/home/ezhoikam/projeler/rails/blog/app/views/posts/index.html.erb:1: syntax error
+collect2: error: ld returned 1 exit status

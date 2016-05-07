@@ -12,12 +12,12 @@
     </ul>
   <% end %>
 
-  <%= f.label :title %> <br>
+  <%= f.label :title, "Başlık" %> <br>
   <%= f.text_field :title %>
   <br><br><br>
-  <%= f.label :content, "Yazınızı buraya yazın." %> <br>
+  <%= f.label :content, "Yazınız:" %> <br>
   <%= f.text_area :content %>
   <br><br><br>
-
-  <%= f.submit %>
+  
+  <%= f.submit "Kaydet" %>
 <% end %>
