@@ -1,0 +1,23 @@
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <h3>
+      <%= @post.errors.count %> hata yazının kaydedilmesine engel oldu.
+    </h3>
+    <ul>
+      <% @post.errors.full_messages.each do |msj| %>
+      <li>
+        <%= msj %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %>
+  <br><br><br>
+  <%= f.label :content, "Yazınızı buraya yazın." %> <br>
+  <%= f.text_area :content %>
+  <br><br><br>
+
+  <%= f.submit %>
+<% end %>
