@@ -1,0 +1,99 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a,
+a:hover {
+    -webkit-transition: 0.25s color linear;
+    -moz-transition: 0.25s color linear;
+    -o-transition: 0.25s color linear;
+    transition: 0.25s color linear;
+}
+$theme: #BFBFA8;
+.yorumlar {
+    max-width: 450px;
+    min-width: 300px;
+    margin: 50px auto;
+    .yorum {
+        position: relative;
+        border-bottom: solid 5px rgba(178, 179, 153, .125);
+        margin: 0 auto 50px;
+        text-align: justify;
+        &:last-child {
+            border: none;
+        }
+        &:hover {
+            .zaman {
+                opacity: 0.75;
+            }
+        }
+        h4 {
+            display: inline-block;
+            font-weight: 300;
+            margin-bottom: 25px;
+            a {
+                color: #404040;
+                text-transform: lowercase;
+                text-decoration: none;
+                &:hover {
+                    color: $theme;
+                }
+            }
+        }
+        zaman {
+            color: #909090;
+            margin-right: 40px;
+            opacity: 1;
+            &:hover {
+                opacity: 0.44;
+                cursor: pointer;
+            }
+        }
+        p {
+            margin-bottom: 50px;
+            text-align: justify;
+            .reply {
+                color: $theme;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.active,
+.yorumlar yorum:hover .active,
+active:hover {
+    opacity: 0.75;
+}
+.yorumlar yorum:hover .active:hover {
+    opacity: 0.44;
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
+    .yorumlar .yorum {
+        padding: 0 25px;
+    }
+    h4 {
+        display: inline-block !important;
+        vertical-align: middle;
+    }
+    p {
+        margin-left: 0;
+        text-align: justify;
+    }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+    .zaman {
+        display: inline-block;
+        margin: 0;
+        opacity: 1 !important;
+    }
+    h4 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    p {
+        margin-left: 0;
+        text-align: justify;
+    }
+}

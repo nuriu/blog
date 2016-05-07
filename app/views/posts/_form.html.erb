@@ -1,23 +1,26 @@
 <%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-    <h3>
-      <%= @post.errors.count %> hata yazının kaydedilmesine engel oldu.
-    </h3>
-    <ul>
-      <% @post.errors.full_messages.each do |msj| %>
-      <li>
-        <%= msj %>
-      </li>
-      <% end %>
-    </ul>
+<% if @post.errors.any? %>
+<h3>
+  <%= @post.errors.count %>
+  hata yazının kaydedilmesine engel oldu.
+</h3>
+<ul>
+  <% @post.errors.full_messages.each do |msj| %>
+  <li>
+    <%= msj %>
+  </li>
   <% end %>
+</ul>
+<% end %>
 
-  <%= f.label :title, "Başlık" %> <br>
-  <%= f.text_field :title %>
-  <br><br><br>
-  <%= f.label :content, "Yazınız:" %> <br>
-  <%= f.text_area :content %>
-  <br><br><br>
-  <%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
-  <%= f.submit "Kaydet", class: "btn btn-success" %>
+<%= f.label :title, "Başlık" %>
+<br>
+<%= f.text_field :title %>
+<br><br><br>
+<%= f.label :content, "Yazınız:" %>
+<br>
+<%= f.text_area :content %>
+<br><br><br>
+<%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
+<%= f.submit "Kaydet", class: "btn btn-success" %>
 <% end %>
