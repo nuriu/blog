@@ -18,6 +18,6 @@
   <%= f.label :content, "Yazınız:" %> <br>
   <%= f.text_area :content %>
   <br><br><br>
-  
-  <%= f.submit "Kaydet" %>
+  <%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
+  <%= f.submit "Kaydet", class: "btn btn-success" %>
 <% end %>

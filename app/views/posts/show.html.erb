@@ -1,11 +1,10 @@
-<h2>
+<h1>
   <%= @post.title %>
-</h2>
-<hr>
-  <%= @post.content %>
+</h1>
+<%= @post.content %>
 
 <br><br><br>
 
-<%= link_to "Geri Dön", root_path %>
-<%= link_to "Düzenle", edit_post_path(@post) %>
-<%= link_to "Sil", post_path(@post), method: :delete, data: { confirm: "Yazıyı silmek istediğinizden emin misiniz?"} %>
+<%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
+<%= link_to "Düzenle", edit_post_path(@post), class: "btn btn-success" %>
+<%= link_to "Sil", post_path(@post), class: "btn btn-danger", method: :delete, data: { confirm: "Yazıyı silmek istediğinizden emin misiniz?"} %>
