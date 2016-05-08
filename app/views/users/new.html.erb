@@ -1,0 +1,33 @@
+<br>
+<div class="col-sm-2 geri">
+  <%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
+</div>
+<div class="col-sm-12">
+  <div class="page-header">
+    <h2>Kayıt Ol</h2>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_for(@user) do |f| %>
+      <%= f.label :name, "İsim" %>
+      <br>
+      <%= f.text_field :name %>
+      <br><br>
+      <%= f.label :email, "E-posta" %>
+      <br>
+      <%= f.email_field :email %>
+      <br><br>
+      <%= f.label :password, "Şifre" %>
+      <br>
+      <%= f.password_field :password %>
+      <br><br>
+      <%= f.label :password_confirmation, "Doğrulama" %>
+      <br>
+      <%= f.password_field :password_confirmation %>
+      <br><br>
+      <%= f.submit "Kullanıcı Oluştur", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
