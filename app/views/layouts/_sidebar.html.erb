@@ -10,10 +10,23 @@
     <li>
       <%= link_to "İletişim", root_path %>
     </li>
+    <% if logged_in? %>
+    <li><%= link_to "Profil", current_user %></li>
+    <% end %>
   </ul>
   <ul class="nav hidden-xs" id="footer">
-    <li>
-      <%= link_to "Yönetici Girişi", root_path %>
-    </li>
+    <% if logged_in? %>
+      <li>
+        <%= link_to "Yeni Yazı", new_post_path(@post), class: "btn btn-success" %>
+      </li>
+      <br>
+      <li>
+        <%= link_to "Çıkış Yap", logout_path, class: "btn btn-danger", method: "delete" %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Yönetici Girişi", login_path %>
+      </li>
+    <% end %>
   </ul>
 </div>
