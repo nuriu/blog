@@ -1,38 +1,46 @@
-<br><br><br>
-<%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
-<br><br>
-
-<h1><%= @post.title %></h1>
-<p class="yazi"><%= @post.content %></p>
-
 <br>
-<%= link_to "Düzenle", edit_post_path(@post), class: "btn btn-success" %>
-<%= link_to "Sil", post_path(@post), class: "btn btn-danger", method: :delete, data: { confirm: "Yazıyı silmek istediğinizden emin misiniz?"} %>
-
-<br><br><br>
-
-<div class="yorumlar">
-  <h2>Yorumlar</h2>
-  <br><br>
-  <% @post.comments.each do |comment| %>
-  <div class="yorum">
-    <h4>
-      <%= comment.commenter %>
-      <span class="zaman">-
-        <%= comment.created_at.strftime("%d %B %y") %></span>
-    </h4>
-    <p>
-      <%= comment.body %>
-    </p>
-  </div>
-  <p>
-    <%= link_to 'Yorumu Sil', [comment.post, comment], class: "btn btn-danger", method: :delete, data: { confirm: 'Yorumu silmek istediğinizden emin misiniz?' } %>
-  </p>
-  <hr><br>
-  <% end %>
+<div class="col-sm-2 geri">
+  <%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
 </div>
 
-<br>
+<div class="col-sm-12">
+  <div class="page-header">
+    <h2><%= @post.title %></h2>
+  </div>
 
-<h2>Yorum Ekle</h2>
-<%= render 'commentForm' %>
+  <p class="yazi"><%= @post.content %></p>
+
+  <br>
+  <%= link_to "Düzenle", edit_post_path(@post), class: "btn btn-success" %>
+  <%= link_to "Sil", post_path(@post), class: "btn btn-danger", method: :delete, data: { confirm: "Yazıyı silmek istediğinizden emin misiniz?"} %>
+
+  <br>
+
+  <div class="yorumlar">
+    <div class="page-header">
+      <h4>Yorumlar</h4>
+    </div>
+    <% @post.comments.each do |comment| %>
+    <h4>
+      <%= comment.commenter %>
+      <span>-
+        <%= comment.created_at.strftime("%d %B %y") %>
+      </span>
+    </h4>
+    <br>
+    <p class="yazi">
+      <%= comment.body %>
+    </p>
+    <br>
+    <p>
+      <%= link_to 'Yorumu Sil', [comment.post, comment], class: "btn btn-danger", method: :delete, data: { confirm: 'Yorumu silmek istediğinizden emin misiniz?' } %>
+    </p>
+    <br>
+    <% end %>
+  </div>
+  <div class="page-header">
+    <h4>Yorum Ekle</h4>
+  </div>
+  <%= render 'commentForm' %>
+
+</div>

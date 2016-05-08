@@ -13,14 +13,13 @@
 </ul>
 <% end %>
 
-<%= f.label :title, "Başlık" %>
+<%= f.label :title, "Başlık:" %>
 <br>
-<%= f.text_field :title %>
+<%= f.text_field :title, class: "metinAlani" %>
 <br><br><br>
 <%= f.label :content, "Yazınız:" %>
 <br>
-<%= f.text_area :content %>
+<%= f.text_area :content, class: "yaziAlani" %>
 <br><br><br>
-<%= link_to "Geri Dön", root_path, class: "btn btn-warning" %>
 <%= f.submit "Kaydet", class: "btn btn-success" %>
 <% end %>

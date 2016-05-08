@@ -1,13 +1,16 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
     <%= f.label :commenter, "Ad Soyad:" %><br>
-    <%= f.text_field :commenter %>
+    <%= f.text_field :commenter, class: "metinAlani" %>
   </p>
+  <br>
   <p>
     <%= f.label :body, "Yorumunuz:" %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "yaziAlani" %>
   </p>
+  <br>
   <p>
     <%= f.submit "Yorumu Kaydet", class: "btn btn-success" %>
   </p>
 <% end %>
+<br><br><br>

@@ -1,22 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 body {
+    height: 100%;
     background: #282931;
     -webkit-font-smoothing: antialiased;
     font-family: 'Varela Round', sans-serif;
     height: 100%;
     color: white;
-}
-h1 {
-    line-height: 72px;
-}
-hr {
-    margin: 0 0 0;
-}
-p {
-    line-height: 24px;
-    margin: 24px 0;
-    color: #bbbbc4;
 }
 a {
     text-decoration: none;
@@ -24,17 +14,119 @@ a {
 }
 a:hover {
     text-decoration: none;
+    color: inherit;
+    color: rgba(255,0,0, 0.75);
 }
-.tarih {
-    font-size: 14px;
-    line-height: 24px;
-    color: #fc3565;
-    padding-right: 20px;
+.row,
+.wrapper {
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
-.sag {
-  float: right;
-  margin-bottom: 200px;
+.column:after,
+.column:before,
+.wrapper:after,
+.wrapper:before {
+    content: "";
+    display: table;
+}
+.column:after,
+.wrapper:after {
+    clear: both;
+}
+.column {
+    height: 100%;
+    overflow: auto;
+    *zoom: 1;
+}
+.column .padding {
+    padding: 20px;
+}
+.box {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+#main {
+    background-color: #282931;
+    .img-circle {
+        margin-top: 18px;
+        height: 70px;
+        width: 70px;
+    }
+}
+#sidebar {
+    color: #ffffff;
+    text-shadow: 1px 0 1px #888888;
+    background-color: rgba(0,0,0, 0.5);
+    padding-left: 25px;
+    .logo {
+        display: block;
+        padding: 3px;
+        background-color: #fff;
+        color: #777777;
+        height: 40px;
+        width: 40px;
+        margin: 15px;
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 0 0;
+        margin-top: 50px;
+    }
+    a {
+        color: #ffffff;
+        text-shadow: 1px 0 1px #888888;
+    }
+    a:hover {
+        color: inherit;
+        background-color: rgba(0,0,0, 0.5);
+    }
+    #footer {
+        position: absolute;
+        bottom: 25px;
+    }
+}
+@media (max-width: 768px) {
+    #sidebar {
+        text-align: center;
+        font-size: 26px;
+        .logo {
+            text-align: center;
+            font-size: 50px;
+            height: 75px;
+            width: 75px;
+            margin-bottom: 30px;
+        }
+    }
+}
+.page-header {
+    margin-top: 55px;
+    padding-top: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.col-sm-9.full {
+    width: 100%;
+}
+.yorumlar {
+    margin-bottom: -50px;
 }
 .yazi {
   text-align: justify;
+}
+.yaziAlani {
+    width: 50%;
+    height: 150px;
+}
+.metinAlani {
+    width: 50%;
+    height: 50px;
 }

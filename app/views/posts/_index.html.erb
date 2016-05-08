@@ -1,0 +1,21 @@
+<% @posts.each do |post| %>
+<div class="row">
+  <div class="col-sm-10">
+    <h3><%= link_to post.title, post %></h3>
+    <h4>
+      <small>
+        <%= post.created_at.strftime("%d %B %Y") %>
+        &nbsp;•&nbsp;
+        <a href="#"><%= link_to "Yazıyı Oku", post %></a>
+      </small>
+    </h4>
+  </div>
+  <!--
+              <div class="col-sm-2">
+                <a href="#" class="pull-right"></a>
+              </div>-->
+</div>
+<div class="row divider">
+  <div class="col-sm-12"><hr></div>
+</div>
+<% end %>
