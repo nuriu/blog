@@ -11,11 +11,11 @@
   <p class="yazi"><%= @post.content %></p>
 
   <br>
-  <%= link_to "Düzenle", edit_post_path(@post), class: "btn btn-success" %>
-  <%= link_to "Sil", post_path(@post), class: "btn btn-danger", method: :delete, data: { confirm: "Yazıyı silmek istediğinizden emin misiniz?"} %>
-
+  <% if logged_in? %>
+    <%= link_to "Düzenle", edit_post_path(@post), class: "btn btn-success" %>
+    <%= link_to "Sil", post_path(@post), class: "btn btn-danger", method: :delete, data: { confirm: "Yazıyı silmek istediğinizden emin misiniz?"} %>
   <br>
-
+  <% end %>
   <div class="yorumlar">
     <div class="page-header">
       <h4>Yorumlar</h4>
@@ -32,10 +32,12 @@
       <%= comment.body %>
     </p>
     <br>
-    <p>
-      <%= link_to 'Yorumu Sil', [comment.post, comment], class: "btn btn-danger", method: :delete, data: { confirm: 'Yorumu silmek istediğinizden emin misiniz?' } %>
-    </p>
-    <br>
+    <% if logged_in? %>
+      <p>
+        <%= link_to 'Yorumu Sil', [comment.post, comment], class: "btn btn-danger", method: :delete, data: { confirm: 'Yorumu silmek istediğinizden emin misiniz?' } %>
+      </p>
+      <br>
+    <% end %>
     <% end %>
   </div>
   <div class="page-header">
